@@ -20,8 +20,17 @@ $ source /etc/profile
 
 安装完成之后，测试安装是否成功
 ```bash
-cd /usr/local/apache-zookeeper-3.8.0-bin/bin
+cd /usr/local/apache-zookeeper-3.8.0-bin/conf
+cp zoo_sample.cfg zoo.cfg
 
+vi zoo.cfg
+# 在zoo.cfg中添加---
+dataDir=/usr/local/apache-zookeeper-3.8.0-bin/data                                                                               
+dataLogDir=/usr/local/apache-zookeeper-3.8.0-bin/logs
+#               ---
+
+cd /usr/local/apache-zookeeper-3.8.0-bin/bin
+sh zkServer.sh
 sh zkCli.sh
 ```
 
